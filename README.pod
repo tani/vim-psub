@@ -27,6 +27,5 @@ is equivalent to C<< :'<,'>s/foo/bar/g >>.
 
 Copyright (C) 2013 TANIGUCHI Masaya
 
-This program is licensed under the MIT License.
-
+This program is licensed under the L<MIT License|https://tani.github.io/license/mit.txt>
 =cut
