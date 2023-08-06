@@ -1,0 +1,31 @@
+*psub.txt*                   A vim plugin to substitute a pattern in parallel
+=============================================================================
+vim-psub~
+
+A vim plugin to substitute a pattern in parallel.
+The plugin is inspired by vim-abolish |https://github.com/tpope/vim-abolish|.
+
+=============================================================================
+PSub command ~
+                                                                      *:PSub*
+
+This plugin provides one command `:PSub` which is similar to `:s` but
+it expands a pattern in parallel. For example, if you want to swap two words
+`foo1` and `foo2` in a line, you can use `:S/foo{1,2}/foo{2,1}/g` to do.
+
+The command `:PSub` accepts the same arguments as `:s` does. For
+example, `:P/foo/bar/g` is equivalent to `:P/foo/bar/g`. The only
+difference is that `:S` expands a pattern in parallel by `{}`.
+
+The command `:PSub` also accepts a range. For example, `:'<,'>P/foo/bar/`
+is equivalent to `:'<,'>s/foo/bar/`.
+
+=============================================================================
+License~
+
+Copyright (C) 2013 TANIGUCHI Masaya
+
+This program is licensed under the MIT License.
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:
