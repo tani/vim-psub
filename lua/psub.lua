@@ -74,8 +74,13 @@ return function(tbl)
   local pat, rep, flags = argparse(arg)
   local range = vim.fn.getline(tbl.line1, tbl.line2)
   local result = {}
+  local changed = false
   for _, line in ipairs(range) do
-    table.insert(result, __substitute(line, pat, rep, flags))
+    local newline = __substitute(line, pat, rep, flags)
+    changed = changed or newline ~= line
+    table.insert(result, newline)
   end
-  vim.fn.setline(tbl.line1, result)
+  if changed then
+    vim.fn.setline(tbl.line1, result)
+  end
 end
